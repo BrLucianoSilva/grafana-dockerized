@@ -1,0 +1,19 @@
+############### Run Grafana Docker #################
+ docker pull grafana/grafana:4.6.3 
+ OR
+ docker pull grafana/grafana:5.0.0
+
+ docker run   -d   \
+ 	-p 3000:3000   \
+ 	--name=grafana-server \
+   	-v /var/lib/grafana:/var/lib/grafana   \
+   	-e "GF_INSTALL_PLUGINS=grafana-clock-panel,alexanderzobnin-zabbix-app,grafana-simple-json-datasource" \
+   	grafana/grafana:5.0.0
+
+############### Run Grafana Docker Compose #################
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+docker swarm init
+
+docker stack deploy --compose-file docker-compose.yml grafana
