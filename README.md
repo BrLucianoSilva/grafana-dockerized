@@ -1,7 +1,7 @@
 
 # Grafana Dockerized
 
-## Refereces
+## References
 ### Grafana Official Documentation
 * [Documentation](http://docs.grafana.org/installation/docker/) - Grafana Docker Installation
 * [Dockerfile](https://github.com/grafana/grafana-docker) - Documentacion about Grafana in Docker
