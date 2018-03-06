@@ -6,7 +6,7 @@ services:
     ports:
         - "3000:3000"
     deploy:
-        replicas: 2
+        replicas: 1
         update_config: 
                 parallelism: 2
                 delay: 10s
@@ -18,7 +18,7 @@ services:
         - /var/lib/grafana:/var/lib/grafana
         #- /etc/grafana:/etc/grafana
     environment:
-        - GF_INSTALL_PLUGINS=grafana-clock-panel,alexanderzobnin-zabbix-app,grafana-simple-json-datasource
+        - GF_INSTALL_PLUGINS=grafana-clock-panel,alexanderzobnin-zabbix-app,grafana-simple-json-datasource, grafana-piechart-panel, grafana-worldmap-panel, raintank-worldping-app
 
   visualizer:
     image: dockersamples/visualizer:stable
